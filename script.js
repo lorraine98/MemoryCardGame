@@ -1,37 +1,51 @@
-const cards = document.querySelectorAll('.memory-card');
+const cards = document.querySelectorAll(".memory-card");
 
 let hasFilpedCard = false;
+let lockBoard = false;
 let firstCard, secondCard;
 
 function filpCard() {
-    this.classList.add('flip')
-    if (!hasFilpedCard) {
-        hasFilpedCard = true;
-        firstCard = this;
+  if (lockBoard) return;
 
-        return;
-    }
-    hasFilpedCard = false;
-    secondCard = this;
-    checkForMatch();
+  if (this === firstCard) return;
+
+  this.classList.add("flip");
+  if (!hasFilpedCard) {
+    hasFilpedCard = true;
+    firstCard = this;
+
+    return;
+  }
+  hasFilpedCard = false;
+  secondCard = this;
+  checkForMatch();
 }
 
-
 function checkForMatch() {
-    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
-    isMatch ? disableCards() : unflippCards();
+  isMatch ? disableCards() : unflippCards();
 }
 
 function disableCards() {
-    firstCard.removeEventListener('click', filpCard);
-    secondCard.removeEventListener('click', filpCard);
+  firstCard.removeEventListener("click", filpCard);
+  secondCard.removeEventListener("click", filpCard);
+
+  resetBorad();
 }
 
 function unflippCards() {
-    setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
-    }, 1200);
+  lockBoard = true;
+  setTimeout(() => {
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
+    lockBoard = false;
+  }, 1200);
 }
-cards.forEach(card => card.addEventListener('click', filpCard))
+
+function resetBorad() {
+  [hasFilpedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+cards.forEach((card) => card.addEventListener("click", filpCard));
