@@ -21,6 +21,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
+  align-items: center;
 }
 
 .memory-card {
