@@ -1,0 +1,26 @@
+[
+  {
+    "imagePath": "../img/asset0.svg",
+    "name": "asset0"
+  },
+  {
+    "imagePath": "../img/asset1.svg",
+    "name": "asset1"
+  },
+  {
+    "imagePath": "../img/asset2.svg",
+    "name": "asset2"
+  },
+  {
+    "imagePath": "../img/asset3.svg",
+    "name": "asset3"
+  },
+  {
+    "imagePath": "../img/asset4.svg",
+    "name": "asset4"
+  },
+  {
+    "imagePath": "../img/asset5.svg",
+    "name": "asset5"
+  }
+]
