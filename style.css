@@ -7,17 +7,15 @@
 body {
   height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: cornflowerblue;
 }
 
 .memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   perspective: 1000px;
-  align-items: center;
 }
 
 .memory-card {
@@ -25,7 +23,6 @@ body {
   height: 200px;
   position: relative;
   margin: 5px;
-  transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
