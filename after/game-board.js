@@ -17,7 +17,7 @@ export class GameBoard extends HTMLElement {
   async connectedCallback() {
     console.log("gameBoard is connected...");
     const cardInfoList = await this.#fetchCardInfoList(this.#level.hard);
-    this.classList.add("memory-game");
+    this.classList.add("board");
     this.#cards = this.#createCards(cardInfoList);
     shuffleArray(this.#cards);
     this.append(...this.#cards);

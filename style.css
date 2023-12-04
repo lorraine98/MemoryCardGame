@@ -12,13 +12,13 @@ body {
   background-color: cornflowerblue;
 }
 
-.memory-game {
+.board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   perspective: 1000px;
 }
 
-.memory-card {
+.card {
   width: 150px;
   height: 200px;
   position: relative;
@@ -27,12 +27,12 @@ body {
   transition: transform 0.5s;
 }
 
-.memory-card:active {
+.card:active {
   transform: scale(0.97);
   transition: transform 0.2s;
 }
 
-.memory-card.flip {
+.card.flip {
   transform: rotateY(180deg);
 }
 

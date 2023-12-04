@@ -3,7 +3,7 @@ export class GameCard extends HTMLElement {
   #isDisabled = false;
 
   connectedCallback() {
-    this.classList.add("memory-card");
+    this.classList.add("card");
     this.dataset.name = this.getAttribute("name");
 
     const frontImg = document.createElement("img");
