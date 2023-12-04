@@ -14,10 +14,6 @@ export class GameBoard extends HTMLElement {
   #firstCard = null;
   #secondCard = null;
 
-  constructor() {
-    super();
-  }
-
   async connectedCallback() {
     console.log("gameBoard is connected...");
     const cardInfoList = await this.#fetchCardInfoList(this.#level.hard);

@@ -13,16 +13,16 @@ function flipCard() {
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
-
     return;
   }
+
   hasFlippedCard = false;
   secondCard = this;
   checkForMatch();
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.id === secondCard.dataset.id;
+  let isMatch = firstCard.dataset.name === secondCard.dataset.name;
 
   isMatch ? disableCards() : unflipCards();
 }
