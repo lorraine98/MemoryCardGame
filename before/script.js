@@ -4,7 +4,7 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
-function flipCard() {
+function onClickCard() {
   if (lockBoard) return;
 
   if (this === firstCard) return;
@@ -28,8 +28,8 @@ function checkForMatch() {
 }
 
 function disableCards() {
-  firstCard.removeEventListener("click", flipCard);
-  secondCard.removeEventListener("click", flipCard);
+  firstCard.removeEventListener("click", onClickCard);
+  secondCard.removeEventListener("click", onClickCard);
 
   resetSelections();
 }
@@ -64,4 +64,4 @@ const orderList = [0, 1, 2, 3];
   });
 })();
 
-cards.forEach((card) => card.addEventListener("click", flipCard));
+cards.forEach((card) => card.addEventListener("click", onClickCard));
