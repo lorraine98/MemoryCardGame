@@ -31,7 +31,7 @@ function disableCards() {
   firstCard.removeEventListener("click", flipCard);
   secondCard.removeEventListener("click", flipCard);
 
-  resetBoard();
+  resetSelections();
 }
 
 function unflipCards() {
@@ -43,7 +43,7 @@ function unflipCards() {
   }, 1200);
 }
 
-function resetBoard() {
+function resetSelections() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
