@@ -57,11 +57,13 @@ function shuffleArray(arr) {
 
 const orderList = [0, 1, 2, 3];
 
-(function shuffle() {
+function shuffle() {
   shuffleArray(orderList);
   cards.forEach((card, idx) => {
     card.style.order = orderList[idx];
   });
-})();
+}
+
+shuffle();
 
 cards.forEach((card) => card.addEventListener("click", onClickCard));
